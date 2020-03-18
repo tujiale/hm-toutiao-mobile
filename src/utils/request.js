@@ -119,6 +119,3 @@ instance.interceptors.response.use(function (response) {
 })
 
 export default instance
-
-//  A  =>  B  => C
-//  A  /  B  /  C  /
