@@ -37,3 +37,43 @@ export function unfollowUser (autid) {
     method: 'delete'
   })
 }
+/***
+ * 获取用户自己的个人信息 粉丝 数 /. 文章数
+ * ***/
+
+export function getUserInfo () {
+  return request({
+    url: '/user'
+  })
+}
+
+/****
+ * 获取用户的个人资料
+ *
+ * ***/
+export function getUserProfile () {
+  return request({
+    url: '/user/profile'
+  })
+}
+/****
+ * 修改用户头像
+ * ****/
+export function updatePhoto (data) {
+  return request({
+    url: '/user/photo',
+    method: 'patch',
+    data // body参数
+  })
+}
+/******
+ *  保存用户信息
+ *
+ * **/
+export function saveUserInfo (data) {
+  return request({
+    url: '/user/profile',
+    method: 'patch',
+    data: { ...data, photo: null } // 直接将photo设置为空
+  })
+}
